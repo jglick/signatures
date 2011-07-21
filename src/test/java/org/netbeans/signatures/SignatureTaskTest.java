@@ -67,7 +67,7 @@ public class SignatureTaskTest extends TestCase {
         super.setUp();
         antJar = new File(Class.forName("org.apache.tools.ant.Project").getProtectionDomain().getCodeSource().getLocation().toURI());
         assertTrue(antJar.getAbsolutePath(), antJar.isFile());
-        antLauncherJar = new File(antJar.getParentFile(), "ant-launcher.jar");
+        antLauncherJar = new File(Class.forName("org.apache.tools.ant.launch.Launcher").getProtectionDomain().getCodeSource().getLocation().toURI());
         assertTrue(antLauncherJar.getAbsolutePath(), antLauncherJar.isFile());
     }
     
